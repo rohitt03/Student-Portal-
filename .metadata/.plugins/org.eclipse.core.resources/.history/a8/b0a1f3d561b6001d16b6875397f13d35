@@ -1,0 +1,43 @@
+package com.app.pojos;
+
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Student {
+	@Id
+	private Long prn;
+
+	@Column(length = 50)
+	private String firstName;
+
+	@Column(length = 50)
+	private String lastName;
+
+	private LocalDate dob;
+
+	@Column(length = 100)
+	private String mail;
+
+	@Column(length = 50)
+	private String password;
+	
+	@OneToOne(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Attendance attendance;
+
+}

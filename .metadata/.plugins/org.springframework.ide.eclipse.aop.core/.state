@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="BackEnd"/>
+<aop-project name="spring_mvc_ecommerce"/>
+<aop-project name="product_seller"/>
+</aop-reference-model>

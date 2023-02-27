@@ -1,0 +1,28 @@
+package com.app.pojos;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Attendance extends BaseEntity {
+
+	private Boolean status;
+
+	@ManyToOne
+	@JoinColumn
+	private AttendenceDate attendencedate;
+
+	@ManyToOne
+	@JoinColumn
+	private Student student;
+
+}
