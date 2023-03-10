@@ -23,7 +23,7 @@ import lombok.Setter;
 @Entity
 public class Student {
 	@Id
-	private Long prn;
+	private String prn;
 
 	@Column(length = 50)
 	private String firstName;
@@ -45,5 +45,8 @@ public class Student {
 	
 	@OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Attendance> attendance;
-
+	
+	@OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Marks> marks;
+	
 }

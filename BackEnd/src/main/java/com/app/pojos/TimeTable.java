@@ -1,10 +1,13 @@
 package com.app.pojos;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,13 +19,17 @@ import lombok.Setter;
 @Setter
 @Entity
 @SuppressWarnings("serial")
-public class TimeTable extends BaseEntity implements Serializable {
+//@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"course"}))
+public class TimeTable implements Serializable {
 
-	@Column(length = 300)
-	private String link;
-	
+	@Id
 	@OneToOne
 	@JoinColumn()
 	private Course course;
 
+	
+	@Column(length = 300)
+	private String link;
+	
+	
 }

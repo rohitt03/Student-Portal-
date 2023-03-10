@@ -15,6 +15,9 @@ import lombok.Setter;
 @Entity
 public class Admin extends BaseEntity {
 	@Column(length = 50)
+	private String username;
+	
+	@Column(length = 50)
 	private String firstName;
 
 	@Column(length = 50)
